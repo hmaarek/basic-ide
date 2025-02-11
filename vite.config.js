@@ -4,11 +4,8 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 5173,
-    open: true,
-  },
-  esbuild: {
-    loader: "jsx",
-    include: /src\/.*\.jsx?$/, // Ensure JSX files are correctly loaded
+    host: "0.0.0.0",  // Allows external access (needed for GitHub Codespaces)
+    port: 5173,       // Default Vite port
+    strictPort: true, // Ensures it doesn’t pick a different port
   },
 });
