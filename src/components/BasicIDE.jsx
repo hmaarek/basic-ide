@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Editor from "@monaco-editor/react";
 import styled from "styled-components";
-import JSBasic from "./lib/basic.js";
+import JSBasic from "../lib/basic.js";
 
 const Container = styled.div`
   display: flex;
