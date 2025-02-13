@@ -7,10 +7,15 @@ export default defineConfig({
     host: "0.0.0.0",
     port: 5173,
     strictPort: true,
-    hmr: false,  // 🔹 Disable Hot Module Reloading
-    watch: {
-      usePolling: true,  // 🔹 Fix file watcher issues in Codespaces
+    hmr: {
+      clientPort: 443,
     },
+    watch: {
+      usePolling: true, // 🔹 Fix file watcher issues in GitHub Codespaces
+    },
+  },
+  resolve: {
+    extensions: [".js", ".jsx"], // 🔹 Ensure .jsx is correctly resolved
   },
   base: "/",
   publicDir: "public",
