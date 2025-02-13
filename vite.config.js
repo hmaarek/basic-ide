@@ -10,13 +10,12 @@ export default defineConfig({
     hmr: {
       clientPort: 443,
     },
-    watch: {
-      usePolling: true, // 🔹 Fix file watcher issues in GitHub Codespaces
-    },
-  },
-  resolve: {
-    extensions: [".js", ".jsx"], // 🔹 Ensure .jsx is correctly resolved
   },
   base: "/",
-  publicDir: "public",
+  publicDir: "public",  // Ensure Vite recognizes the public directory
+  build: {
+    rollupOptions: {
+      input: "public/index.html", // Explicitly set index.html as entry
+    },
+  },
 });
