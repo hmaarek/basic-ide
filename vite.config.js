@@ -10,12 +10,15 @@ export default defineConfig({
     hmr: {
       clientPort: 443,
     },
-  },
-  base: "/",
-  publicDir: "public",  // Ensure Vite recognizes the public directory
-  build: {
-    rollupOptions: {
-      input: "public/index.html", // Explicitly set index.html as entry
+    watch: {
+      ignored: ["**/node_modules/**", "**/dist/**"], // 🔹 Ignore unnecessary files
+      usePolling: true,  // 🔹 Fix file watcher issues in GitHub Codespaces
     },
   },
+  resolve: {
+    extensions: [".js", ".jsx"], // 🔹 Ensure .jsx files are correctly resolved
+  },
+  base: "/",
+  publicDir: "public",
 });
+git add vite.config.js
