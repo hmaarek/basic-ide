@@ -21,4 +21,3 @@ export default defineConfig({
   base: "/",
   publicDir: "public",
 });
-git add vite.config.js
