@@ -10,12 +10,21 @@ export default defineConfig({
     hmr: {
       clientPort: 443,
     },
+    middlewareMode: false,  // Ensure Vite serves static files
   },
-  base: "/", 
-  publicDir: "public",  // Ensure Vite detects the public directory
+  base: "/",
+  publicDir: "public",
   build: {
     rollupOptions: {
-      input: "public/index.html",  // Force Vite to use index.html
+      input: "public/index.html",
     },
+  },
+  configureServer(server) {
+    server.middlewares.use((req, res, next) => {
+      if (req.url === "/") {
+        req.url = "/index.html"; // Force load index.html for root route
+      }
+      next();
+    });
   },
 });
