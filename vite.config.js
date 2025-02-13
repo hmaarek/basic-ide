@@ -11,10 +11,11 @@ export default defineConfig({
       clientPort: 443,
     },
   },
-  base: "/", // Ensure Vite serves from root correctly
+  base: "/", 
+  publicDir: "public",  // Ensure Vite detects the public directory
   build: {
     rollupOptions: {
-      input: "public/index.html", // Explicitly set index.html as entry
+      input: "public/index.html",  // Force Vite to use index.html
     },
   },
 });
