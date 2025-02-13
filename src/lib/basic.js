@@ -2411,4 +2411,21 @@ this.basic = (function() {
 } ());
 
 // TODO: Unit tests for compile errors
+class JSBasic {
+  constructor() {
+      console.log("JSBasic Interpreter Initialized");
+  }
+
+  run(code) {
+      if (!code.trim()) {
+          return "No code to execute.";
+      }
+      
+      if (code.startsWith("PRINT")) {
+          return code.replace("PRINT", "").trim().replace(/\"/g, '');
+      }
+
+      return "Unknown command.";
+  }
+}
 export default JSBasic;
