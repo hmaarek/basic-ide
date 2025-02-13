@@ -7,8 +7,9 @@ export default defineConfig({
     host: "0.0.0.0",
     port: 5173,
     strictPort: true,
-    hmr: {
-      clientPort: 443,
+    hmr: false,  // 🔹 Disable Hot Module Reloading
+    watch: {
+      usePolling: true,  // 🔹 Fix file watcher issues in Codespaces
     },
   },
   base: "/",
