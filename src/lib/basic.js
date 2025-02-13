@@ -2411,3 +2411,4 @@ this.basic = (function() {
 } ());
 
 // TODO: Unit tests for compile errors
+export default JSBasic;
