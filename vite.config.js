@@ -11,13 +11,12 @@ export default defineConfig({
       clientPort: 443,
     },
     watch: {
-      ignored: ["**/node_modules/**", "**/dist/**"], // 🔹 Ignore unnecessary files
-      usePolling: true,  // 🔹 Fix file watcher issues in GitHub Codespaces
+      ignored: ["**/node_modules/**", "**/dist/**", "**/.git/**"],
+      usePolling: true,
     },
   },
   resolve: {
-    extensions: [".js", ".jsx"], // 🔹 Ensure .jsx files are correctly resolved
+    extensions: [".js", ".jsx"],
   },
-  base: "/",
-  publicDir: "public",
+  base: "/"
 });
